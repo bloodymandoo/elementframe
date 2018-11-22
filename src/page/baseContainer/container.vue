@@ -1,0 +1,48 @@
+<template>
+  <el-container id="container">
+    <el-aside width="60px">
+      <Menu></Menu>
+    </el-aside>
+    <el-container>
+      <el-header></el-header>
+      <el-main></el-main>
+    </el-container>
+  </el-container>
+</template>
+
+<script>
+import Menu from 'page/menu/menu'
+export default {
+  name: 'Container',
+  components: {
+    Menu
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+  #container{
+    height:100%;
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    >.el-aside {
+      width:60px;
+      background-color: #fff;
+    }
+    >.el-container {
+      flex:1;
+      display:flex;
+      flex-direction: column;
+      .el-header{
+        background: linear-gradient(to right, rgb(0, 213, 230) 10%, rgb(31, 114, 162) 100%);
+      }
+      .el-main {
+        flex:1;
+        background-color: #f2f7f8;
+      }
+    }
+
+  }
+
+</style>
