@@ -10,14 +10,14 @@
           <el-input
             class="account"
             placeholder="Account"
-            prefix-icon="iconfont icon-user"
+            prefix-icon="fa fa-user"
             type="text"
             v-model="account">
           </el-input>
           <el-input
             class="password"
             placeholder="Password"
-            prefix-icon="iconfont icon-mima"
+            prefix-icon="fa fa-lock"
             type="password"
             v-model="password">
           </el-input>
@@ -37,7 +37,14 @@
 
 <script>
 export default {
-  name: 'login'
+  name: 'login',
+  data () {
+    return {
+      account: '',
+      password: '',
+      checked: false
+    }
+  }
 }
 </script>
 
@@ -79,8 +86,10 @@ export default {
       .account{
         width:100%;
         margin:10px 0;
-
         font-size:12px;
+        .fa{
+          font-size:20px;
+        }
       }
       .password{
         width:100%;

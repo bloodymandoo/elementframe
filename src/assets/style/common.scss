@@ -1,5 +1,5 @@
 @import './reset.css';
-@import '../font/iconfont.css';
+@import '../font/css/font-awesome.min.css';
 .el-checkbox{
   .el-checkbox__label{
     font-size:12px!important;
@@ -14,6 +14,45 @@
     left:0;
     .el-input__icon{
       color:#333;
+      font-size:20px;
+      line-height: 40px;
     }
   }
+}
+.clearfix{
+  display: table;
+  content: " ";
+}
+.circle{
+  border-radius: 50%;
+}
+.el-dropdown-menu__item{
+  a{
+    color:rgba(0,0,0,0.6);
+  }
+}
+
+.el-submenu__title,.el-menu-item {
+  height: 56px;
+  line-height: 56px;
+  font-size: 14px;
+  color: #303133;
+  padding: 0 20px;
+  list-style: none;
+  cursor: pointer;
+  position: relative;
+  transition: border-color .3s,background-color .3s,color .3s;
+  box-sizing: border-box;
+  white-space: nowrap;
+  text-align: left;
+}
+.el-menu-item .menu-icon,.el-submenu .menu-icon {
+  vertical-align: middle;
+  margin-right: 5px;
+  width: 24px;
+  text-align: center;
+  font-size: 18px;
+}
+.el-menu-item{
+  text-align: left;
 }

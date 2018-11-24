@@ -1,10 +1,12 @@
 <template>
   <el-container id="container">
-    <el-aside width="60px">
+    <el-aside width="63px">
       <Menu></Menu>
     </el-aside>
     <el-container>
-      <el-header></el-header>
+      <el-header>
+        <HeadNav></HeadNav>
+      </el-header>
       <el-main></el-main>
     </el-container>
   </el-container>
@@ -12,10 +14,12 @@
 
 <script>
 import Menu from 'page/menu/menu'
+import HeadNav from 'page/head/headnav'
 export default {
   name: 'Container',
   components: {
-    Menu
+    Menu,
+    HeadNav
   }
 }
 </script>
@@ -27,7 +31,7 @@ export default {
     display: flex;
     flex-direction: row;
     >.el-aside {
-      width:60px;
+      width:auto!important;
       background-color: #fff;
     }
     >.el-container {
