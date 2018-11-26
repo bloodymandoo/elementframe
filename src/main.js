@@ -8,8 +8,11 @@ import router from './router'
 import 'babel-polyfill'
 import 'assets/style/common.scss'
 import store from './store'
+import VueCookies from 'vue-cookies'
+import '@/axiosConfig/axiosConfig.js'
 
 Vue.use(ElementUI)
+Vue.use(VueCookies)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

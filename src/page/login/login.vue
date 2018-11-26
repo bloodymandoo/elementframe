@@ -25,7 +25,7 @@
             <el-checkbox class="check" style="font-size:12px;" v-model="checked">Remember me</el-checkbox>
             <router-link class="link" to="">Forget Password?</router-link>
           </div>
-          <el-button class="loginBtn">Login</el-button>
+          <el-button class="loginBtn" @click="login">Login</el-button>
         </article>
       </section>
       <footer>
@@ -36,6 +36,7 @@
 </template>
 
 <script>
+import { login } from '@/api/user'
 export default {
   name: 'login',
   data () {
@@ -43,6 +44,17 @@ export default {
       account: '',
       password: '',
       checked: false
+    }
+  },
+  methods: {
+    login () {
+      login(this.account, this.password)
+        .then(res => {
+          console.log(res)
+        })
+        .catch(err => {
+          console.log(err)
+        })
     }
   }
 }

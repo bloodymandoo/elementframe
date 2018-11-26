@@ -20,6 +20,11 @@ export default {
   components: {
     Menu,
     HeadNav
+  },
+  beforeCreate () {
+    if (this.$cookies.get('my_token') === null) {
+      this.$router.push('/login')
+    }
   }
 }
 </script>
