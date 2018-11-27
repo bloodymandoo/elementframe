@@ -1,33 +1,33 @@
 import {post, get} from '@/axiosConfig/axiosConfig.js'
 
 const login = (name, password) => {
-  return post({
-    url: '/user/login',
-    params: {
+  return post(
+    '/user/login',
+    {
       name: name,
       password: password
     }
-  })
+  )
 }
 
 const register = (name, password, email) => {
-  return get({
-    url: '/user/register',
-    params: {
+  return get(
+    '/user/register',
+    {
       name: name,
       password: password,
       email: email
     }
-  })
+  )
 }
 
 const getUserInfo = (userId) => {
-  return get({
-    url: '/user/getUserInfo',
-    params: {
+  return get(
+    '/user/getUserInfo',
+    {
       _id: userId
     }
-  })
+  )
 }
 
 export {

@@ -3,18 +3,24 @@ import qs from 'qs'
 import { Message, Loading } from 'element-ui'
 
 // 响应时间
-axios.defaults.timeout = 5 * 1000
+axios.defaults.timeout = 5000 * 1000
 // 配置cookie
 // axios.defaults.withCredentials = true
 // 配置请求头
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8'
 // 配置接口地址
-axios.defaults.baseURL = '/api'
+axios.defaults.baseURL = 'http://localhost:3000/api'
 var loadingInstance
 // POST传参序列化(添加请求拦截器)
 axios.interceptors.request.use(
   config => {
+    console.log(config)
+    let target = '#app'
+    if (config.url.match('/login$')) {
+      target = '#login'
+    }
     loadingInstance = Loading.service({
+      target: target,
       lock: true,
       text: '数据加载中，请稍后...',
       spinner: 'el-icon-loading',
